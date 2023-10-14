@@ -4,13 +4,14 @@
 /****************************** 90 seconds ****************************/
 
 function manipulateString(inputString) {
-  if (!inputString || typeof inputString !== 'string') {
-    return "Please provide a valid string as input.";
+  let camelString = "";
+  for (let i = 0; i < inputString.length; i++) {
+    if (i % 2 === 0) {
+      camelString += inputString[i].toUpperCase();
+    } else {
+      camelString += inputString[i].toLowerCase();
+    }
   }
-
-  const firstChar = inputString.charAt(0).toUpperCase();
-  const remainingChars = inputString.substring(1).toLowerCase();
-
-  return firstChar + remainingChars;
+  return camelString;
 }
-console.log(manipulateString("hello")); 
+console.log(manipulateString("Hello world"));
